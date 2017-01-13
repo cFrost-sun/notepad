@@ -7,6 +7,11 @@ GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' IDENTIFIED BY 'password' WITH GRANT OP
 FLUSH PRIVILEGES;
 ```
 
+## 克隆数据库
+```
+mysqldump -u root -p lhen > lhen-release.sql
+mysql -u 用户名 -p --database 数据库名 < D:abc.sql
+```
 
 MySql
 授权：
