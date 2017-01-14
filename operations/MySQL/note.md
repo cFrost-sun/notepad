@@ -38,10 +38,20 @@ FLUSH PRIVILEGES;
 #收回权限(不包含赋权权限)  
 REVOKE ALL PRIVILEGES ON *.* FROM cacti;  
 REVOKE ALL PRIVILEGES ON cacti.* FROM cacti;  
-#收回赋权权限  
+##收回赋权权限  
 REVOKE GRANT OPTION ON *.* FROM cacti;  
-#重新载入赋权表  
-FLUSH PRIVILEGES;  
+##重新载入赋权表  
+FLUSH PRIVILEGES; 
+
+##新建用户
+```
+CREATE USER 'xxxx'@'localhost' IDENTIFIED BY 'xxxxx';
+``` 
+##删除用户
+```
+DROP USER xxxx;
+DROP USER 'xxxx'@'localhost';
+```
 
 docker run --name mysql -p 63001:3306 -v $DOCKER_RUNTIME/mysql/data:/var/lib/mysql -v $DOCKER_RUNTIME/mysql/conf:/etc/mysql/conf.d -d mysql:5.6.35
 
