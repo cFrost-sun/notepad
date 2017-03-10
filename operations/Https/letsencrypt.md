@@ -6,7 +6,7 @@ sudo ./letsencrypt-auto certonly --standalone --email admin@eulerproject.io -d e
 ### 证书续期
 
 ```
-sudo ./letsencrypt-auto certonly --renew --email admin@eulerproject.io -d eulerproject.io -d www.eulerproject.io -d ci.eulerproject.io -d repo.eulerproject.io -d www.uat.eulerproject.io
+sudo ./letsencrypt-auto certonly --renew-by-default --standalone --email admin@eulerproject.io -d eulerproject.io -d www.eulerproject.io -d ci.eulerproject.io -d repo.eulerproject.io -d www.uat.eulerproject.io
 ```
 
 ### 生成dhparam
