@@ -1,13 +1,30 @@
+## 新建用户
+
+```
+CREATE USER 'xxxx'@'localhost' IDENTIFIED BY 'xxxxx';
+```
+
+## 删除用户
+
+```
+DROP USER xxxx;
+DROP USER 'xxxx'@'localhost';
+```
+
 ## 用户赋权
+
 ```
 GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION;
 ```
+
 ## 刷新权限
+
 ```
 FLUSH PRIVILEGES;
 ```
 
 ## 克隆数据库
+
 ```
 mysqldump -u root -p lhen > lhen-release.sql
 mysql -u 用户名 -p --database 数据库名 < D:abc.sql
@@ -43,15 +60,6 @@ REVOKE GRANT OPTION ON *.* FROM cacti;
 ##重新载入赋权表  
 FLUSH PRIVILEGES; 
 
-##新建用户
-```
-CREATE USER 'xxxx'@'localhost' IDENTIFIED BY 'xxxxx';
-``` 
-##删除用户
-```
-DROP USER xxxx;
-DROP USER 'xxxx'@'localhost';
-```
 
 docker run --name mysql -p 63001:3306 -v $DOCKER_RUNTIME/mysql/data:/var/lib/mysql -v $DOCKER_RUNTIME/mysql/conf:/etc/mysql/conf.d -d mysql:5.6.35
 
