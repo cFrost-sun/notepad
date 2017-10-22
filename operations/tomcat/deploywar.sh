@@ -27,11 +27,11 @@ do
 done
 
 if [ ! -d "$deploy_tmp_dir" ]; then  
-    mkdir "$deploy_tmp_dir"
+    mkdir -p "$deploy_tmp_dir"
 fi
 
 if [ ! -d "$bak_dir" ]; then  
-    mkdir "$bak_dir"
+    mkdir -p "$bak_dir"
 fi
 
 #清空下载临时目录
